@@ -12,6 +12,7 @@ struct ContentView: View
     @State private var questionCount:Int = 0
     @State private var answerToShow:String = ""
     @State private var answerShowed:Bool = false
+    @State private var newGame:Bool = true
     init(){questions.shuffle()}
     func hideAnswer()
     {
@@ -142,6 +143,7 @@ struct ContentView: View
                             self.questionCount = 1
                             questions.shuffle()
                             hideAnswer()
+                            self.newGame.toggle()
                             self.questionCount = 0
                         }, label:
                         {
